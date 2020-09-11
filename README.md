@@ -173,7 +173,7 @@ This is Kubernetes Cheatsheet based on Kubernetes API 1.19 version.
 
 ## References
 
-**Kubernetes Document:** [Link](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/)
+**Kubernetes Document:** [Link](https://kubernetes.io/docs/home/)
 
 **Kubernetes Command:** [Link](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
 
