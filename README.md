@@ -83,10 +83,10 @@ This is Kubernetes Cheatsheet based on Kubernetes API 1.19 version.
 |Describe service|kubectl describe service `<service>`|
 |Delete service|kubectl delete service `<service>`|
 
-## Endpoint Commands
+## Endpoints Commands
 | Name   |   Command |
 |------------ | -------------|
-|kubectl get endpoints `<service_name>`|
+|Get endpoints|kubectl get endpoints `<endpoints_name>`|
 
 ## Ingress Commands
 | Name   |   Command |
