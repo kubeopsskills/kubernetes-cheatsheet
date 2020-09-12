@@ -174,10 +174,10 @@ This is Kubernetes Cheatsheet based on Kubernetes API 1.19 version.
 ## Labels and Selectors Commands
 | Name   |   Command |
 |------------ | -------------|
-|Get labels of node,pod and deployment|kubectl get `<node/pod/deployment>` --show-labels|
+|Show labels of node,pod and deployment|kubectl get `<node/pod/deployment>` --show-labels|
 |Attach labels to `<node/pod/deployment>`|kubectl label `<node/pod/deployment>` `<pod_name>` `<key>=<value>`|
 |Remove `<node/pod/deployment>`|kubectl label `<node/pod/deployment>` `<pod_name>` `<key>`-|
-|Select node,pod and deployment by using labels|kubectl get `<node/pod/deployment>` -l `<key>=<value`>|
+|Select node,pod and deployment by using labels|kubectl get `<node/pod/deployment>` -l `<key>=<value>`|
 
 
 
