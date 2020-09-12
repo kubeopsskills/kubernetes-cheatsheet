@@ -27,8 +27,8 @@ This is Kubernetes Cheatsheet based on Kubernetes API 1.19 version.
 |Create secret from key-value|kubectl create secret generic `<secret_name>` --from-literal=`<key>:<value>` --from-literal=`<key>:<value>`|
 |Create secret from file|kubectl create secret generic `<secret_name>` --from-file=`<file_name>`|
 |Create job|kubectl create job `<job_name>` --image=`<image_name>`|
-|Create job from cronjob|kubectl create job `<job_name>` --from=`cronjob/<cronjob-name>` -- `<command>` `<args>`|
-|Create cronjob|kubectl create cronjob --image=`<image_name>` --schedule='`<cron-syntax>`' -- `<command>` `<args>` |
+|Create job from cronjob|kubectl create job `<job_name>` --from=`cronjob/<cronjob-name>`|
+|Create cronjob|kubectl create cronjob --image=`<image_name>` --schedule='`<cron-syntax>`' -- `<command>` `<args>`|
 
 ## Monitoring Usage Commands
 | Name   |   Command |
@@ -146,20 +146,20 @@ This is Kubernetes Cheatsheet based on Kubernetes API 1.19 version.
 ## Job Commands
 | Name   |   Command |
 |------------ | -------------|
-|Get cronjob |kubectl get cronjob `cronjob_name`|
-|Get cronjob in yaml |kubectl get cronjob `<cronjob_name>` -o yaml|
-|Edit cronjob |kubectl edit cronjob `<cronjob_name>`|
-|Describe cronjob |kubectl describe cronjob `<cronjob_name>`|
-|Delete cronjob |kubectl delete cronjob `<cronjob_name>`  |
-
-## Cronjob Commands
-| Name   |   Command |
-|------------ | -------------|
 |Get job |kubectl get job `<job_name>`|
 |Get job in yaml |kubectl get job `<job_name>` -o yaml|
 |Edit job in yaml |kubectl edit job `<job_name>`|
 |Describe job |kubectl describe job `<job_name>`|
 |Delete job |kubectl delete job `<job_name>`  |
+
+## Cronjob Commands
+| Name   |   Command |
+|------------ | -------------|
+|Get cronjob |kubectl get cronjob `cronjob_name`|
+|Get cronjob in yaml |kubectl get cronjob `<cronjob_name>` -o yaml|
+|Edit cronjob |kubectl edit cronjob `<cronjob_name>`|
+|Describe cronjob |kubectl describe cronjob `<cronjob_name>`|
+|Delete cronjob |kubectl delete cronjob `<cronjob_name>`  |
 
 ## Network Policy Commands
 | Name   |   Command |
@@ -170,6 +170,16 @@ This is Kubernetes Cheatsheet based on Kubernetes API 1.19 version.
 |Edit networkpolicy |kubectl edit networkpolicy `<networkpolicy_name>`|
 |Describe networkpolicy |kubectl describe networkpolicy `<networkpolicy_name>`|
 |Delete networkpolicy |kubectl delete networkpolicy `<networkpolicy_name>`  |
+
+## Labels and Selectors Commands
+| Name   |   Command |
+|------------ | -------------|
+|Get labels of node,pod and deployment|kubectl get `<node/pod/deployment>` --show-labels|
+|Attach labels to `<node/pod/deployment>`|kubectl label `<node/pod/deployment>` `<pod_name>` `<key>=<value>`|
+|Remove `<node/pod/deployment>`|kubectl label `<node/pod/deployment>` `<pod_name>` `<key>`-|
+|Select node,pod and deployment by using labels|kubectl get `<node/pod/deployment>` -l `<key>=<value`>|
+
+
 
 ## References
 
