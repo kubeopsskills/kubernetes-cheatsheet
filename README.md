@@ -172,13 +172,18 @@ This is Kubernetes Cheatsheet based on Kubernetes API 1.19 version.
 |Delete networkpolicy |kubectl delete networkpolicy `<networkpolicy_name>`  |
 
 ## Labels and Selectors Commands
-| Name   |   Command |
+| Name   |   Command  |
 |------------ | -------------|
 |Show labels of node,pod and deployment|kubectl get `<node/pod/deployment>` --show-labels|
 |Attach labels to `<node/pod/deployment>`|kubectl label `<node/pod/deployment>` `<pod_name>` `<key>=<value>`|
 |Remove `<node/pod/deployment>`|kubectl label `<node/pod/deployment>` `<pod_name>` `<key>`-|
 |Select node,pod and deployment by using labels|kubectl get `<node/pod/deployment>` -l `<key>=<value>`|
 
+
+## API Resource
+| Name   |   Command  |
+|------------ | -------------|
+|Print the supported API resources on the server|kubectl api-resources|
 
 
 ## References
