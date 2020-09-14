@@ -59,7 +59,7 @@ This is Kubernetes Cheatsheet based on Kubernetes API 1.19 version.
 |Delete pod|kubectl delete pod `<pod_name>`|
 |Log pod|kubectl logs pod `<pod_name>`|
 |Tail -f pod|kubectl logs pod -f `<pod_name>`|
-|Execute into pod|kubectl exec -it pod `<pod_name>` /bin/bash|
+|Execute into pod|kubectl exec -it pod `<pod_name>` -- /bin/bash|
 |Running Temporary Image|kubectl run `<pod_name>` --image=curlimages/curl --rm -it --restart=Never -- curl `<destination>` |
 
 ## Deployment Commands
