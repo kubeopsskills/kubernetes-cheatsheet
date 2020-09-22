@@ -173,6 +173,24 @@ This is Kubernetes Cheatsheet based on Kubernetes API 1.19 version.
 |Describe networkpolicy |kubectl describe networkpolicy `<networkpolicy_name>`|
 |Delete networkpolicy |kubectl delete networkpolicy `<networkpolicy_name>`  |
 
+## Persistence Volume Commands
+| Name   |   Command |
+|------------ | -------------|
+|Get persistence volume |kubectl get pv `<persistencevolume_name>`|
+|Get persistence volume in yaml |kubectl get pv `<persistencevolume_name>` -o yaml|
+|Edit persistence volume |kubectl edit pv `<persistencevolume_name>`|
+|Describe persistence volume |kubectl describe pv `<persistencevolume_name>`|
+|Delete persistence volume |kubectl delete pv `<persistencevolume_name>`  |
+
+## Persistence Volume Claim Commands
+| Name   |   Command |
+|------------ | -------------|
+|Get persistence volume claim |kubectl get pvc `<persistencevolume_claim_name>`|
+|Get persistence volume claim in yaml |kubectl get pvc `<persistencevolume_claim_name>` -o yaml|
+|Edit persistence volume claim |kubectl edit pvc `<persistencevolume_claim_name>`|
+|Describe persistence volume claim |kubectl describe pvc `<persistencevolume_claim_name>`|
+|Delete persistence volume claim |kubectl delete pvc `<persistencevolume_claim_name>`  |
+
 ## Labels and Selectors Commands
 | Name   |   Command |
 |------------ | -------------|
@@ -184,7 +202,7 @@ This is Kubernetes Cheatsheet based on Kubernetes API 1.19 version.
 ## API Resource
 | Name   |   Command  |
 |------------ | -------------|
-|Print the supported API resources on the server|kubectl api-resources|
+|Print the supported API resources on the Kubernetes API server|kubectl api-resources|
 
 ## References
 
