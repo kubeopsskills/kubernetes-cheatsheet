@@ -14,7 +14,8 @@ This is Kubernetes Cheatsheet based on Kubernetes API 1.19 version.
 |Create from multiple files|kubectl apply -f ./`<file_name_1>`.yaml -f ./`<file_name_2>`.yaml|
 |Create all files in directory|kubectl apply -f ./`<directory_name>`|
 |Create from url|kubectl apply -f `https://<url>`|
-|Create pod|kubectl run `<pod_name>` --image `image_name`|
+|Create pod|kubectl run `<pod_name>` --image `<image_name>`|
+|Create pod, then expose it as service|kubectl run `<pod_name>` --image `<image_name>` --port `<port>` --expose|
 |Create pod yaml file|kubectl run `<pod_name>` --image `image_name` --dry-run=client -o yaml > `<file_name>`.yaml|
 |Create deployment|kubectl create deployment `<deployment_name>` --image `<image_name>`|
 |Create deployment yaml file|kubectl create deployment `<deployment_name>` --image `<image_name>` --dry-run=client -o yaml > `<file_name>`.yaml
@@ -52,12 +53,13 @@ This is Kubernetes Cheatsheet based on Kubernetes API 1.19 version.
 |Get pod|kubectl get pod `<pod_name>`|
 |Get pod in yaml|kubectl get pod `<pod_name>` -o yaml|
 |Get pod wide information|kubectl get pod `<pod_name>` -o wide|
+|Get pod with watch|kubectl get pod `<pod_name>` -w|
 |Edit pod|kubectl edit pod `<pod_name>`|
 |Describe pod|kubectl describe pod `<pod_name>`|
 |Delete pod|kubectl delete pod `<pod_name>`|
 |Log pod|kubectl logs pod `<pod_name>`|
 |Tail -f pod|kubectl logs pod -f `<pod_name>`|
-|Execute into pod|kubectl exec -it pod `<pod_name>` /bin/bash|
+|Execute into pod|kubectl exec -it pod `<pod_name>` -- /bin/bash|
 |Running Temporary Image|kubectl run `<pod_name>` --image=curlimages/curl --rm -it --restart=Never -- curl `<destination>` |
 
 ## Deployment Commands
@@ -171,20 +173,36 @@ This is Kubernetes Cheatsheet based on Kubernetes API 1.19 version.
 |Describe networkpolicy |kubectl describe networkpolicy `<networkpolicy_name>`|
 |Delete networkpolicy |kubectl delete networkpolicy `<networkpolicy_name>`  |
 
+## Persistence Volume Commands
+| Name   |   Command |
+|------------ | -------------|
+|Get persistence volume |kubectl get pv `<persistencevolume_name>`|
+|Get persistence volume in yaml |kubectl get pv `<persistencevolume_name>` -o yaml|
+|Edit persistence volume |kubectl edit pv `<persistencevolume_name>`|
+|Describe persistence volume |kubectl describe pv `<persistencevolume_name>`|
+|Delete persistence volume |kubectl delete pv `<persistencevolume_name>`  |
+
+## Persistence Volume Claim Commands
+| Name   |   Command |
+|------------ | -------------|
+|Get persistence volume claim |kubectl get pvc `<persistencevolume_claim_name>`|
+|Get persistence volume claim in yaml |kubectl get pvc `<persistencevolume_claim_name>` -o yaml|
+|Edit persistence volume claim |kubectl edit pvc `<persistencevolume_claim_name>`|
+|Describe persistence volume claim |kubectl describe pvc `<persistencevolume_claim_name>`|
+|Delete persistence volume claim |kubectl delete pvc `<persistencevolume_claim_name>`  |
+
 ## Labels and Selectors Commands
-| Name   |   Command  |
+| Name   |   Command |
 |------------ | -------------|
 |Show labels of node,pod and deployment|kubectl get `<node/pod/deployment>` --show-labels|
 |Attach labels to `<node/pod/deployment>`|kubectl label `<node/pod/deployment>` `<pod_name>` `<key>=<value>`|
-|Remove `<node/pod/deployment>`|kubectl label `<node/pod/deployment>` `<pod_name>` `<key>`-|
+|Remove labels from `<node/pod/deployment>`|kubectl label `<node/pod/deployment>` `<pod_name>` `<key>`-|
 |Select node,pod and deployment by using labels|kubectl get `<node/pod/deployment>` -l `<key>=<value>`|
-
 
 ## API Resource
 | Name   |   Command  |
 |------------ | -------------|
-|Print the supported API resources on the server|kubectl api-resources|
-
+|Print the supported API resources on the Kubernetes API server|kubectl api-resources|
 
 ## References
 
