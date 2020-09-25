@@ -30,6 +30,7 @@ This is Kubernetes Cheatsheet based on Kubernetes API 1.19 version.
 |Create job|kubectl create job `<job_name>` --image=`<image_name>`|
 |Create job from cronjob|kubectl create job `<job_name>` --from=`cronjob/<cronjob-name>`|
 |Create cronjob|kubectl create cronjob --image=`<image_name>` --schedule='`<cron-syntax>`' -- `<command>` `<args>`|
+|Create inline yaml| cat <<EOF \| kubectl create -f - `<enter>` <br> YAML CONTENT `<enter>` <br> EOF `<enter>`|
 
 ## Monitoring Usage Commands
 | Name   |   Command |
