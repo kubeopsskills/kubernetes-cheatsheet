@@ -204,6 +204,23 @@ This is Kubernetes Cheatsheet based on Kubernetes API 1.19 version.
 |Remove labels from `<node/pod/deployment>`|kubectl label `<node/pod/deployment>` `<pod_name>` `<key>`-|
 |Select node,pod and deployment by using labels|kubectl get `<node/pod/deployment>` -l `<key>=<value>`|
 
+## Role-Based Access Control (RBAC) Commands
+| Name   |   Command |
+|------------ | -------------|
+|List current user privilleges with default namespace|kubectl auth can-i --list|
+|List specified user privilleges with default namespace|kubectl auth can-i --list --as `<user/service_account>`|
+|List current user privilleges with specified namespace|kubectl auth can-i --list -n `<namespace>`|
+|List specified user privilleges with specified namespace|kubectl auth can-i --list --as `<user/service_account>` -n `<namespace>`|
+|Verify if current user is able to do something with resource| kubectl auth can-i `<verb>` `<resource>`|
+|Verify if specified user is able to do something with resource| kubectl auth can-i `<verb>` `<resource>` --as `<user/service_account>`|
+|Create service account|kubectl create serviceaccount `<serviceaccount_name>`|
+|Create role and define resource privilleges|kubectl create role `<role_name>` --resource=`<object>` --verb=`<verb>`|
+|Create cluster role and define cluster resource privilleges|kubectl create clusterrole `<clusterrole_name>` --resource=`<object>` --verb=`<verb>`|
+|Create role binding with service account|kubectl create rolebinding `<rolebinding_name>` --role `<role_name>` --serviceaccount `<serviceaccount_name>`|
+|Create cluster role binding with service account|kubectl create clusterrolebinding `<clusterrolebinding_name>` --clusterrole `<clusterrole_name>` --serviceaccount `<serviceaccount_name>`|
+|Create role binding with user|kubectl create rolebinding `<rolebinding_name>` --role `<role_name>` --user `<user_name>`|
+|Create cluster role binding with user|kubectl create clusterrolebinding `<clusterrolebinding_name>` --clusterrole `<clusterrole_name>` --user `<user_name>`|
+ 
 ## API Resource
 | Name   |   Command  |
 |------------ | -------------|
