@@ -203,6 +203,7 @@ This is Kubernetes Cheatsheet based on Kubernetes API 1.19 version.
 |Attach labels to `<node/pod/deployment>`|kubectl label `<node/pod/deployment>` `<pod_name>` `<key>=<value>`|
 |Remove labels from `<node/pod/deployment>`|kubectl label `<node/pod/deployment>` `<pod_name>` `<key>`-|
 |Select node,pod and deployment by using labels|kubectl get `<node/pod/deployment>` -l `<key>=<value>`|
+|Delete all resources by using labels|kubectl delete all -l `<key>=<value>`|
 
 ## Role-Based Access Control (RBAC) Commands
 | Name   |   Command |
