@@ -37,7 +37,7 @@ This is Kubernetes Cheatsheet based on Kubernetes API 1.19 version.
 | Create job from cronjob               | kubectl create job `<job_name>` --from=`cronjob/<cronjob-name>`                                                                                  |
 | Create cronjob                        | kubectl create cronjob --image=`<image_name>` --schedule='`<cron-syntax>`' -- `<command>` `<args>`                                               |
 | Create inline yaml                    | cat <<EOF \| kubectl create -f - `<enter>` <br> YAML CONTENT `<enter>` <br> EOF `<enter>`                                                        |
-| Create role                           | kubectl create role `<role_name>` --verb=`<verb>` --resource=`<resource.group/subresource>` --resource-name=`<resource_name>` --dry-run=`<server | client | none >` |
+| Create role                           | kubectl create role `<role_name>` --verb=`<verb>` --resource=`<resource.group/subresource>` --resource-name=`<resource_name>` --dry-run=`<server | client | none>` |
 
 ## Monitoring Usage Commands
 
