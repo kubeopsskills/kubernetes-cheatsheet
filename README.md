@@ -45,6 +45,20 @@ This is Kubernetes Cheatsheet based on Kubernetes API 1.19 version.
 | Get node cpu and memory utilization | kubectl top node `<node_name>` |
 | Get pod cpu and memory utilization  | kubectl top pods `<pod_name>`  |
 
+## Namespace Usage Commands
+
+| Name                                | Command                        |
+| ----------------------------------- | ------------------------------ |
+| Get all namespaces | kubectl get namespaces |
+| Get namespace  | kubectl get namespaces `<namespace_name>`  |
+| Get namespace in yaml  | kubectl get namespaces `<namespace_name>` -o yaml  |
+| Describe namespace | kubectl describe namespaces `<namespace_name>`  |
+| Execute command with specific namespace (Example) | kubectl get pods --namespace=`<namespace_name>`  |
+| Set default namespace for 'kubectl' | kubectl config set-context --current --namespace="`<namespace_name>`"  |
+| Check current namespace | kubectl config view --minify \| grep namespace:  |
+| Cleanup namespace with specific namespace| kubectl delete all --all --namespace="`<namespace_name>`"|
+| Cleanup namespace (Be careful, make sure you're right namespace) | kubectl delete all --all |
+
 ## Node Commands
 
 | Name             | Command                                |
